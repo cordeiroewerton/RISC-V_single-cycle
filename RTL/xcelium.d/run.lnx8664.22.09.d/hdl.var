@@ -1,5 +1,5 @@
-define XMSIMRC	( /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
-define AMSRC	( /Tools/cadence/XCELIUM2309/tools/xcelium/files/amsrc, ~/.amsrc )
+define XMSIMRC	( /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
+define AMSRC	( /opt/cadence/XCELIUM2209/tools/xcelium/files/amsrc, ~/.amsrc )
 include ./hdlrun.var
 define SNAPSHOT worklib.CPU_tb:sv
 DEFINE RUNMODEDEFAULT 1

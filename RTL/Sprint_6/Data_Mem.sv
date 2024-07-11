@@ -14,8 +14,8 @@ module Data_Mem (
     assign RD = mem[A];
 
     // Escrita sequencial
-    always_ff @(posedge clk or negedge rst) begin
-        if (!rst) begin
+    always_ff @(posedge clk) begin
+        if (rst) begin
             // Reset: Limpa a memória
             integer i;
             for (i = 0; i < 256; i = i + 1) begin

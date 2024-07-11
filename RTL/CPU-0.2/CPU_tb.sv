@@ -6,8 +6,8 @@ module CPU_tb();
 
     initial begin
         rst = 1;
-        clk = 0;
-        #2
+        clk = 1;
+        #1
         rst = 0;
         #100 $finish;
     end
