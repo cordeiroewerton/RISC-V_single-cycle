@@ -1,0 +1,10 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(10Jul2024:19:26:00):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )
+s2::(10Jul2024:19:29:38):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )
+s3::(10Jul2024:19:34:15):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )
+s4::(10Jul2024:19:34:57):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )
+s5::(10Jul2024:21:13:18):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )
+s6::(10Jul2024:21:19:06):( xrun Sprint_3/RegisterFile.sv Sprint_4/ULA.sv Sprint_5/Control_Unit.sv Sprint_5/Inst_mem.sv Sprint_5/PC.sv Sprint_6/Data_Mem.sv CPU-0.2/CPU-0.2.sv CPU-0.2/CPU_tb.sv -gui -access +rcw )

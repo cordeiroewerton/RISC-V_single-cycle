@@ -136,7 +136,7 @@ module Control_Unit(input logic[6:0] Op, Funct7, input logic[3:0] Funct3, output
                         ULASrc = 1;
                         ULAControl = 3'b000;
                         MemWrite = 1;
-                        ResultSrc = X;
+                        ResultSrc = 0;
                     end
                     default: begin
                         regWrite = 0;

@@ -2,7 +2,7 @@ module CPU_tb();
 
     logic clk, rst;
 
-    CPU_01 u0(.clk(clk), .rst(rst));
+    CPU_02 u0(.clk(clk), .rst(rst));
 
     initial begin
         rst = 1;

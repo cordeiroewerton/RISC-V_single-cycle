@@ -1,0 +1,97 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Jul 10, 2024 at 21:19:06 -03
+xrun
+	Sprint_3/RegisterFile.sv
+	Sprint_4/ULA.sv
+	Sprint_5/Control_Unit.sv
+	Sprint_5/Inst_mem.sv
+	Sprint_5/PC.sv
+	Sprint_6/Data_Mem.sv
+	CPU-0.2/CPU-0.2.sv
+	CPU-0.2/CPU_tb.sv
+	-gui
+	-access +rcw
+Recompiling... reason: file './CPU-0.2/CPU-0.2.sv' is newer than expected.
+	expected: Wed Jul 10 19:34:12 2024
+	actual:   Wed Jul 10 21:19:04 2024
+file: CPU-0.2/CPU-0.2.sv
+	module worklib.CPU_02:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	ULA ula0(.ULAControl(w_ULAControl), .SrcA(w_rd1SrcA), .SrcB(w_SrcB), .ULAResult(w_Result));
+	       |
+xmelab: *W,CUVWSP (./CPU-0.2/CPU-0.2.sv,13|8): 1 output port was not connected:
+xmelab: (./Sprint_4/ULA.sv,1): Z
+
+	Top level design units:
+		CPU_tb
+	Control_Unit CU0(.Op(w_Inst[6:0]), .Funct3(w_Inst[14:12]), .Funct7(w_Inst[31:25]), .ResultSrc(w_ResultSrc), .MemWrite(w_MemWrite), .ULAControl(w_ULAControl), .ULASrc(w_ULASrc), .ImmSrc(w_ImmSrc), .regWrite(w_RegWrite));
+	                                                |
+xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,11|49): port sizes differ in port connection(3/4) for the instance(CPU_tb.u0) .
+	RegisterFile RF0(.clk(clk), .rst(rst), .ra1(w_Inst[19:15]), .ra2(w_Inst[24:20]), .wa3(w_Inst[11:7]), .wd3(w_Result), .we3(w_RegWrite), .rd1(w_rd1SrcA), .rd2(w_rd2), .S0(reg_aux[0]), .S1(reg_aux[1]), .S2(reg_aux[2]), .S3(reg_aux[3]), .S4(reg_aux[4]), .S5(reg_aux[5]), .S6(reg_aux[6]), .S7(reg_aux[7]));
+	                                                 |
+xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,12|50): port sizes differ in port connection(5/3) for the instance(CPU_tb.u0) .
+	RegisterFile RF0(.clk(clk), .rst(rst), .ra1(w_Inst[19:15]), .ra2(w_Inst[24:20]), .wa3(w_Inst[11:7]), .wd3(w_Result), .we3(w_RegWrite), .rd1(w_rd1SrcA), .rd2(w_rd2), .S0(reg_aux[0]), .S1(reg_aux[1]), .S2(reg_aux[2]), .S3(reg_aux[3]), .S4(reg_aux[4]), .S5(reg_aux[5]), .S6(reg_aux[6]), .S7(reg_aux[7]));
+	                                                                      |
+xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,12|71): port sizes differ in port connection(5/3) for the instance(CPU_tb.u0) .
+	RegisterFile RF0(.clk(clk), .rst(rst), .ra1(w_Inst[19:15]), .ra2(w_Inst[24:20]), .wa3(w_Inst[11:7]), .wd3(w_Result), .we3(w_RegWrite), .rd1(w_rd1SrcA), .rd2(w_rd2), .S0(reg_aux[0]), .S1(reg_aux[1]), .S2(reg_aux[2]), .S3(reg_aux[3]), .S4(reg_aux[4]), .S5(reg_aux[5]), .S6(reg_aux[6]), .S7(reg_aux[7]));
+	                                                                                           |
+xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,12|92): port sizes differ in port connection(5/3) for the instance(CPU_tb.u0) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Data_Mem:sv <0x3ee993d9>
+			streams:   5, words:  2855
+		worklib.ULA:sv <0x363274b5>
+			streams:   1, words:  1606
+		worklib.RegisterFile:sv <0x50ea5606>
+			streams:  20, words:  6856
+		worklib.Control_Unit:sv <0x37271bb9>
+			streams:   1, words: 10806
+		worklib.Instr_Mem:sv <0x37796440>
+			streams:   1, words:   510
+		worklib.PC:sv <0x1fef76f5>
+			streams:   1, words:   328
+		worklib.CPU_02:sv <0x2b2f61c4>
+			streams:  34, words: 10893
+		worklib.CPU_tb:sv <0x7e520dbf>
+			streams:   4, words:  1683
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              8       8
+		Registers:           43      43
+		Scalar wires:        14       -
+		Vectored wires:      57       -
+		Always blocks:        8       8
+		Initial blocks:       1       1
+		Cont. assignments:   13      13
+		Pseudo assignments:  32       -
+		Process Clocks:       3       2
+	Writing initial simulation snapshot: worklib.CPU_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm CPU_tb.u0.clk CPU_tb.u0.reg_aux CPU_tb.u0.rst CPU_tb.u0.w_Imm CPU_tb.u0.w_ImmSrc CPU_tb.u0.w_Inst CPU_tb.u0.w_MemWrite CPU_tb.u0.w_PC CPU_tb.u0.w_PCp4 CPU_tb.u0.w_RData CPU_tb.u0.w_RegWrite CPU_tb.u0.w_Result CPU_tb.u0.w_ResultSrc CPU_tb.u0.w_SrcB CPU_tb.u0.w_ULAControl CPU_tb.u0.w_ULASrc CPU_tb.u0.w_Wd3 CPU_tb.u0.w_rd1SrcA CPU_tb.u0.w_rd2
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 102 NS + 0
+./CPU-0.2/CPU_tb.sv:12         #100 $finish;
+xcelium> probe -create -shm CPU_tb.u0.ula0.SrcA CPU_tb.u0.ula0.SrcB CPU_tb.u0.ula0.ULAControl CPU_tb.u0.ula0.ULAResult CPU_tb.u0.ula0.Z
+Created probe 2
+xcelium> reset
+Loaded snapshot worklib.CPU_tb:sv
+xcelium> run
+Simulation complete via $finish(1) at time 102 NS + 0
+./CPU-0.2/CPU_tb.sv:12         #100 $finish;
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	23.09-s003: Exiting on Jul 10, 2024 at 22:23:46 -03  (total: 01:04:40)
