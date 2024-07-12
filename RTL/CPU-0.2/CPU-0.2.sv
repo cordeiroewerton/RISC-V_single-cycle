@@ -7,7 +7,7 @@ module CPU_02(input logic clk, rst); //Definir as entradas
 	logic w_ULASrc, w_RegWrite, w_MemWrite, w_ResultSrc, w_PCSrc, w_Zero, w_Branch; 
 	logic [7:0] reg_aux [7:0]; 
 
-	PC pc0(.PCin(w_PCp4), .PC(w_PC), .clk(clk), .rst(rst));
+	PC pc0(.PCin(w_PCn), .PC(w_PC), .clk(clk), .rst(rst));
 	Instr_Mem IM0(.A(w_PC), .RD(w_Inst));
 	Control_Unit CU0(.Op(w_Inst[6:0]), .Funct3(w_Inst[14:12]), .Funct7(w_Inst[31:25]), .ResultSrc(w_ResultSrc), .MemWrite(w_MemWrite), .ULAControl(w_ULAControl), .ULASrc(w_ULASrc), .ImmSrc(w_ImmSrc), .regWrite(w_RegWrite), .Branch(w_Branch));
 	RegisterFile RF0(.clk(clk), .rst(rst), .ra1(w_Inst[19:15]), .ra2(w_Inst[24:20]), .wa3(w_Inst[11:7]), .wd3(w_Wd3), .we3(w_RegWrite), .rd1(w_rd1SrcA), .rd2(w_rd2),

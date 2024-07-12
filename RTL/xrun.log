@@ -1,5 +1,5 @@
-xrun(64): 22.09-s007: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s007: Started on Jul 11, 2024 at 14:57:47 -03
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Jul 11, 2024 at 21:38:02 -03
 xrun
 	Sprint_3/RegisterFile.sv
 	Sprint_4/ULA.sv
@@ -11,35 +11,16 @@ xrun
 	CPU-0.2/CPU_tb.sv
 	-gui
 	-access +rcw
-file: Sprint_3/RegisterFile.sv
-	module worklib.RegisterFile:sv
-		errors: 0, warnings: 0
-file: Sprint_4/ULA.sv
-	module worklib.ULA:sv
-		errors: 0, warnings: 0
-file: Sprint_5/Control_Unit.sv
-	module worklib.Control_Unit:sv
-		errors: 0, warnings: 0
-file: Sprint_5/Inst_mem.sv
-	module worklib.Instr_Mem:sv
-		errors: 0, warnings: 0
-file: Sprint_5/PC.sv
-	module worklib.PC:sv
-		errors: 0, warnings: 0
-file: Sprint_6/Data_Mem.sv
-	module worklib.Data_Mem:sv
-		errors: 0, warnings: 0
+Recompiling... reason: file './CPU-0.2/CPU-0.2.sv' is newer than expected.
+	expected: Thu Jul 11 20:44:53 2024
+	actual:   Thu Jul 11 21:37:54 2024
 file: CPU-0.2/CPU-0.2.sv
 	module worklib.CPU_02:sv
-		errors: 0, warnings: 0
-file: CPU-0.2/CPU_tb.sv
-	module worklib.CPU_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
 		CPU_tb
-xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Control_Unit CU0(.Op(w_Inst[6:0]), .Funct3(w_Inst[14:12]), .Funct7(w_Inst[31:25]), .ResultSrc(w_ResultSrc), .MemWrite(w_MemWrite), .ULAControl(w_ULAControl), .ULASrc(w_ULASrc), .ImmSrc(w_ImmSrc), .regWrite(w_RegWrite), .Branch(w_Branch));
 	                                                |
 xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,12|49): port sizes differ in port connection(3/4) for the instance(CPU_tb.u0) .
@@ -54,22 +35,8 @@ xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,13|71): port sizes differ in port connec
 xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,13|92): port sizes differ in port connection(5/3) for the instance(CPU_tb.u0) .
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.Data_Mem:sv <0x77050ca9>
-			streams:   5, words:  2858
-		worklib.ULA:sv <0x75bbe97e>
-			streams:   1, words:  1779
-		worklib.RegisterFile:sv <0x0658516a>
-			streams:  20, words:  6856
-		worklib.Control_Unit:sv <0x0bdf5598>
-			streams:   1, words: 16337
-		worklib.Instr_Mem:sv <0x13225948>
-			streams:   1, words:   538
-		worklib.PC:sv <0x13b9321a>
-			streams:   2, words:   459
-		worklib.CPU_02:sv <0x0e254ead>
-			streams:  40, words: 13489
-		worklib.CPU_tb:sv <0x58ba5333>
-			streams:   4, words:  1684
+		worklib.CPU_02:sv <0x6100e627>
+			streams:  40, words: 13033
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -81,16 +48,24 @@ xmelab: *W,CUVMPW (./CPU-0.2/CPU-0.2.sv,13|92): port sizes differ in port connec
 		Always blocks:        9       9
 		Initial blocks:       1       1
 		Cont. assignments:   15      15
-		Pseudo assignments:  35      35
+		Pseudo assignments:  35       -
+		Process Clocks:       3       1
 	Writing initial simulation snapshot: worklib.CPU_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
-xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 
 -------------------------------------
 Relinquished control to SimVision...
 xcelium> 
-xcelium> source /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm CPU_tb.u0.clk CPU_tb.u0.reg_aux CPU_tb.u0.rst CPU_tb.u0.w_Branch CPU_tb.u0.w_Imm CPU_tb.u0.w_ImmPC CPU_tb.u0.w_ImmSrc CPU_tb.u0.w_Inst CPU_tb.u0.w_MemWrite CPU_tb.u0.w_PC CPU_tb.u0.w_PCSrc CPU_tb.u0.w_PCn CPU_tb.u0.w_PCp4 CPU_tb.u0.w_RData CPU_tb.u0.w_RegWrite CPU_tb.u0.w_ResultSrc CPU_tb.u0.w_SrcB CPU_tb.u0.w_ULAControl CPU_tb.u0.w_ULAResult CPU_tb.u0.w_ULASrc CPU_tb.u0.w_Wd3 CPU_tb.u0.w_Zero CPU_tb.u0.w_rd1SrcA CPU_tb.u0.w_rd2
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 101 NS + 0
+./CPU-0.2/CPU_tb.sv:12         #100 $finish;
 xcelium> ^C
 xcelium> exit
-xmsim: *W,NORUNCMD: No 'run' command issued.
-TOOL:	xrun(64)	22.09-s007: Exiting on Jul 11, 2024 at 14:57:54 -03  (total: 00:00:07)
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	23.09-s003: Exiting on Jul 11, 2024 at 21:40:33 -03  (total: 00:02:31)
